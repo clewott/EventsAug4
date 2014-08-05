@@ -48,7 +48,7 @@ $(document).ready(function() {
 
   $(".box1").on("mousedown", function() {
 
-    $(this).append("<span>Mouse down.</span>")
+    $(this).prepend("<span>Mouse down.</span>")
 
     console.log("Mousedown");
 
@@ -80,14 +80,15 @@ $(document).ready(function() {
 
   //End of box3 - 13 & 14
 
+  $(".box4").hide().fadeIn(2000);
   $(".box4").on("click", function() {
 
     $(this).fadeOut("2000");
-    $(this).fadeIn("3000");
 
   });
 
-  //End of box4 - 15 & 16
+
+  //End of box4 - 15, 16, & 17
 
   $(".box5").on("click", function() {
 
@@ -95,5 +96,56 @@ $(document).ready(function() {
 
   });
 
-  //End of box5 - 17
+  //End of box5 - 18
+
+  $(".box6").on("click", function() {
+
+    $(this).slideUp("10000");
+    $(this).slideDown("10000");
+
+  });
+
+  //End of box6 - 19 & 20
+
+  $( document ).on("mousemove", function(event) {
+
+    $(".box7").text( "pageX: " + event.pageX + ", pageY: " + event.pageY );
+
+  });
+
+  //End of box7 - 21 & 22
+
+  $( "button" ).click(function( event ) {
+    return "This is a button!";
+  });
+  $( "button" ).click(function( event ) {
+  $( "p" ).html( event.result );
+  });
+
+  //End of box8 - 23, 24 & 25
+
+  var last = "";
+  var diff = "";
+
+  $(".box9").click(function( event ) {
+  if ( last ) {
+    diff = event.timeStamp - last;
+    $(".box9").append( "time since last event: " + diff + "<br>" );
+    } else {
+    $(".box9").append( "" );
+  }
+  last = event.timeStamp;
+  });
+
+  //End of box9 - 26, 27, 28 & 29
+
+  $(".box10").on('click', function() {
+    $(this).animate({
+      opacity: 0.5,
+    }, 200
+    );
+  });
+
+  //End og box10 - 30
+
 });
